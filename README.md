@@ -75,4 +75,43 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
 
   ## 三. Vue指令
 
+  ### Vue常用指令
 
+  #### 1. `v-model`
+  - 双向数据绑定，一般用于表单元素
+  ```html
+  <div id="app">
+    <p>{{msg}}</p>
+    <input type="text" v-model="msg">
+  </div>
+  <script type="text/javascript">
+    new Vue({
+      el:"#app",
+      data:{
+        msg:'Hello Worldw'
+      }
+    })
+  </script>
+  ```
+
+  #### 2. `v-for`
+  - 对数组或对象进行循环操作
+  - 提供多个参数
+    `v-for="(value,key,index) in object"`
+  #### 3. `v-on`
+  - 用户绑定事件
+  #### 4. `v-show`
+  - 显示隐藏元素
+  - 没有`v-hide`指令
+
+  ## 四.事件和属性
+
+  ### 1.事件
+
+  #### 1.1 事件简写
+
+  `v-on:click="event"`可以简写成`@click="event"`
+
+  #### 1.2事件对象
+  - 包含事件相关信息，如事件源、事件类型等
+  - 
