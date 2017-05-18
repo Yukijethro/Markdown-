@@ -110,8 +110,50 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
 
   #### 1.1 事件简写
 
-  `v-on:click="event"`可以简写成`@click="event"`
+  `v-on:click="event"`可以简写成`@click="event" //推荐写法`
 
-  #### 1.2事件对象
+  #### 1.2 事件对象
   - 包含事件相关信息，如事件源、事件类型等
-  - 
+
+  #### 1.3 事件冒泡
+  - 概念：当一个元素上的事件被触发时，事件会从事件源开始，往上冒泡，知道事件的根元素，这一过程称为事件的冒泡。
+  - 阻止冒泡：
+    - a) 原生JS方式：依赖事件对象
+
+        `e.stopPropagation()`
+
+        `e.canceBubble = true`
+
+    - b) Vue实现
+
+        `@click.stop ="" `(推荐)
+
+  #### 1.4 默认行为
+
+  - 概念：触发某些事件时会默认执行的行为，如：点击链接是默认会跳转，右击时默认会引出菜单
+  - 阻止默认行为
+    - a) 原生JS方式：依赖事件对象
+
+        `e.preventDefault()`
+
+    - b) vue方式：不依赖事件对象
+
+        `@click.prevent=""`(推荐)
+
+  #### 1.5 键盘事件
+  - `@keydown` `@keypress` `@keyup`
+
+  - `@keydown.enter=""` `@keydown.left=""` `@keydown.up=""` `@keydown.right=""`
+
+  - 默认没有`@keydown.ctrl`事件，可以自定义键盘事件`Vue.directive('on').keyCodes.ctrl=17`
+
+  ### 2. 属性
+
+  #### 2.1 属性绑定和属性缩写
+  - `v-bind`主要用于属性绑定，如`v-bind:属性名=""`
+  - 属性的简写：
+    `v-bind:src=""`简写`:src=""`(推荐)
+
+  #### 2.2 class和style属性
+  - `v-bind:class=""`简写`:class=""`
+  - `v-bind:style=""`简写`:style=""`
