@@ -157,3 +157,50 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
   #### 2.2 class和style属性
   - `v-bind:class=""`简写`:class=""`
   - `v-bind:style=""`简写`:style=""`
+
+ ## 五.模板
+ - 模板就是`{{}}`，用来进行数据绑定
+ - 数据绑定的方式
+    - 双向数据绑定
+
+        `v-model="msg"`
+
+    - 单向数据绑定
+
+        `{{ msg }}"`
+
+        `v-html="msg"`
+
+ ## 六.过滤器
+
+ ### 1. 基本用法
+ - 用来过滤数据模型，在显示之前进行数据处理和筛选
+ - 语法：
+
+    `{{ data | filter1 参数1 参数2 | filter2 参数1 参数2 }}`
+
+  ### 2. 自定义过滤器
+  - 使用全局方法`Vue.filter()`注册一个自定义过滤器，接受两个参数：过滤器ID和过滤器函数
+
+  #### 2.1 语法
+
+  ```html
+      <div id="app">
+          <h3>{{ 9 | addZero }}</h3>
+          <h3>{{ num | number(3,1) }}</h3>
+      </div>
+  ```
+  ```js
+      filters:{
+          addZero:function(data){
+              return data<10?'0'+data:data;
+          },
+          number:function(data,n,m){
+              return Number(data.toFixed(n))+m
+          }
+      }
+  ```
+
+  #### 2.2 双向过滤器
+  - 前面的过滤器都是单向的，由数据model--->视图view，即把来自模型的数据在视图中显示之前进行过滤处理
+  - 双向过滤器是两个方向，由视图view<--->数据model，即也可以把来自视图的数据在绑定到模型中之前进行过滤处理
