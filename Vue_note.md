@@ -204,3 +204,13 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
   #### 2.2 双向过滤器
   - 前面的过滤器都是单向的，由数据model--->视图view，即把来自模型的数据在视图中显示之前进行过滤处理
   - 双向过滤器是两个方向，由视图view<--->数据model，即也可以把来自视图的数据在绑定到模型中之前进行过滤处理
+    ```js
+    currentNumber:{
+        read:function(data){ //model--->view
+            return "$"+data.toFixed(2)
+        },
+        write:function(newValue,oldValue){//view--->model
+            return +newValue.replace(/[^\d.]/g,'')
+        }
+    }
+    ```
