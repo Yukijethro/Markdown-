@@ -202,15 +202,36 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
   ```
 
   #### 2.2 双向过滤器
-  - 前面的过滤器都是单向的，由数据model--->视图view，即把来自模型的数据在视图中显示之前进行过滤处理
-  - 双向过滤器是两个方向，由视图view<--->数据model，即也可以把来自视图的数据在绑定到模型中之前进行过滤处理
-    ```js
-    currentNumber:{
-        read:function(data){ //model--->view
-            return "$"+data.toFixed(2)
-        },
-        write:function(newValue,oldValue){//view--->model
-            return +newValue.replace(/[^\d.]/g,'')
-        }
-    }
-    ```
+  - vue2.x中使用计算属性来代替1.0中的双向过滤器
+
+ ## 七.Ajax通信
+
+ ### 1. vue-resource基本用法
+ - 引入`vue-resource`文件
+ - 使用
+
+    1.`this.$http().then(doneCallbacks,failCallbacks)`
+    2.`this.$http.get().then(doneCallbacks,failCallbacks)`
+    3.`this.$http.post().then(doneCallbacks,failCallbacks)`
+    4.`this.$http.jsonp().then(doneCallbacks,failCallbacks)`
+
+    发送异步的Ajax请求，`doneCallbacks`为请求成功的回调;`failCallbacks`为请求失败回调。
+ - 如果是要传入带参数的,参数部分
+    `this.$http.get('server.php',{params:{json数据}}).then(doneCallbacks,failCallbacks)`
+
+ ### 2. axios基本用法
+    - 引入`axios`文件
+    - 使用
+
+       1.`axios().then(doneCallbacks,failCallbacks)`
+       2.`axios.get().then(doneCallbacks,failCallbacks)`
+       3.`axios.post().then(doneCallbacks,failCallbacks)`
+       4.`axios.jsonp().then(doneCallbacks,failCallbacks)`
+
+       发送异步的Ajax请求，`doneCallbacks`为请求成功的回调;`failCallbacks`为请求失败回调。
+    - 如果是要传入带参数的,参数部分
+       `axios.get('server.php',{params:{json数据}}).then(doneCallbacks,failCallbacks)`
+
+ ## 八.Vue生命周期
+
+ 
