@@ -219,23 +219,24 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
     4. `this.$http.jsonp().then(doneCallbacks,failCallbacks)`
 
  - 发送异步的Ajax请求，`doneCallbacks`为请求成功的回调;`failCallbacks`为请求失败回调。
+
  - 如果是要传入带参数的,参数部分设置如下
-    `this.$http.get('server.php',{params:{json数据}}).then(doneCallbacks,failCallbacks)`
+        `this.$http.get('server.php',{params:{json数据}}).then(doneCallbacks,failCallbacks)`
 
  ### 2. axios基本用法
  - 引入`axios`文件
  - 使用
 
-    1. `axios().then(doneCallbacks,failCallbacks)`
+    1. `axios().then(doneCallbacks).catch(failCallbacks)`
 
-    2. `axios.get().then(doneCallbacks,failCallbacks)`
+    2. `axios.get().then(doneCallbacks).catch(failCallbacks)`
 
-    3. `axios.post().then(doneCallbacks,failCallbacks)`
-
-    4. `axios.jsonp().then(doneCallbacks,failCallbacks)`
+    3. `axios.post().then(doneCallbacks).catch(failCallbacks)`
 
  - 发送异步的Ajax请求，`doneCallbacks`为请求成功的回调;`failCallbacks`为请求失败回调。
  - 如果是要传入带参数的,参数部分设置如下
     `axios.get('server.php',{params:{json数据}}).then(doneCallbacks,failCallbacks)`
+
+ - ## **还不完善，不推荐使用**
 
  ## 八.Vue生命周期
