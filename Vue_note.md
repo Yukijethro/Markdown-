@@ -243,3 +243,18 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
 
  - vue实例从创建到销毁的过程，就是生命周期
  ![生命周期](https://github.com/Yukijethro/Markdown_note/blob/master/Screenshots/lifecycle.png)
+
+
+ | vue1.0+ | vue2.0+ | description |
+ | :----: | :----: | :----: |
+ | init | beforeCreated | 组件实例开始初始化 |
+ | created | created |组件实例创建完成，属性已绑定 |
+ | beforeCompile | beforeMount | 模板编译/挂载之前 |
+ | compile | mounted | 模板编译/挂载之后 |
+ |  ready | mounted | 模板编译/挂载之前(不保证组件已经在document中) |
+ | - | beforeUpdate | 组件更新之前 |
+ | - | updated | 组件更新之后 |
+ | - | activated | for`keep-alive`,组件被激活时调用 |
+ | - | deactivated | for`keep-alive`,组件被移除时调用 |
+ | beforeDestory | beforeDestory | 组件销毁前调用 |
+ | destoryed | destoryed | 组件销毁后调用 |
