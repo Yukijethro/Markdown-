@@ -201,8 +201,6 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
       }
   ```
 
-  #### 2.2 双向过滤器
-  - vue2.x中使用计算属性来代替1.0中的双向过滤器
 
  ## 七.Ajax通信
 
@@ -247,7 +245,7 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
 
  | vue1.0+ | vue2.0+ | description |
  | :----: | :----: | :----: |
- | init | beforeCreated | 组件实例开始初始化 |
+ | init | beforeCreate | 组件实例开始初始化 |
  | created | created |组件实例创建完成，属性已绑定 |
  | beforeCompile | beforeMount | 模板编译/挂载之前 |
  | compile | mounted | 模板编译/挂载之后 |
@@ -256,5 +254,15 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
  | - | updated | 组件更新之后 |
  | - | activated | for`keep-alive`,组件被激活时调用 |
  | - | deactivated | for`keep-alive`,组件被移除时调用 |
- | beforeDestory | beforeDestory | 组件销毁前调用 |
- | destoryed | destoryed | 组件销毁后调用 |
+ | beforeDestroy | beforeDestroy | 组件销毁前调用 |
+ | destroyed | destroyed | 组件销毁后调用 |
+
+ - 每个阶段都提供了相应的钩子函数，用来控制整个生命周期
+ - 可以使用`this.$destroy()`来查看销毁状态
+
+ ## 九.计算属性
+
+ ### 1.基本用法
+ 计算属性也是用来存储属性数据的，但具有以下特点：
+ - 计算属性的数据是可以进行逻辑处理操作的
+ - 可以对计算属性中的数据进行监视的
