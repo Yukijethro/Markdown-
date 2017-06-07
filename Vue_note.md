@@ -293,6 +293,11 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
         data:{
             msg:'welcome',
             wbs:'12138'
+        },
+        age:24,
+        sex:'male',
+        show(){
+            console.log('show函数');
         }
     })
 </script>
@@ -314,4 +319,6 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
 
     ![vm.$data.wbs](https://github.com/Yukijethro/Markdown_note/blob/master/Screenshots/vm.$data.wbs.png)
 - `vm.$options`  获取自定义属性
-    - `console.log()`
+    - `console.log(vm.$options)`
+
+    ![vm.$options](https://github.com/Yukijethro/Markdown_note/blob/master/Screenshots/vm.$options.png)
