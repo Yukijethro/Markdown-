@@ -269,3 +269,38 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
 
  ### 2.计算属性（computed）VS方法（methods）
  将计算属性的get函数定义为一个方法也是可以实现功能
+
+ **区别：**
+ - 计算属性是基于它的依赖进行更新的，只有相关依赖发生改变时才会更新变化
+ - 计算属性是有缓存的，只要相关依赖没有改变，多次访问计算属性时返回的值始终是相同的
+
+### 3.get和set
+计算属性有两部分组成：get和set,分别用来获取计算属性和设置计算属性
+
+**注：**默认计算属性只有get,如果需要对计算属性进行赋值,可自己添加,通过set方法
+
+## 十.vue实例的属性与方法
+
+```html
+<div id="app">
+    {{msg}}
+</div>
+```
+```javascript
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'welcome',
+            wbs:'12138'
+        }
+    })
+</script>
+```
+
+- `vm.属性名`  直接获取属性
+    - `console.log(vm.msg)`
+    
+- `vm.$el`  获取元素
+- `vm.$data`  获取数据对象data
+- `vm.$options`  获取自定义属性
