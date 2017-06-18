@@ -242,7 +242,7 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
  ## 八.Vue生命周期
 
  - vue实例从创建到销毁的过程，就是生命周期
- ![生命周期](https://github.com/Yukijethro/Markdown_note/blob/master/Screenshots/lifecycle.png)
+ ![生命周期](./Screenshots/lifecycle.png)
 
 
  | vue1.0+ | vue2.0+ | description |
@@ -308,22 +308,22 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
 - `vm.属性名`  直接获取属性
     - `console.log(vm.msg)`
 
-    ![vm.属性名](https://github.com/Yukijethro/Markdown_note/blob/master/Screenshots/vm.属性.png)
+    ![vm.属性名](./Screenshots/vm.属性.png)
 - `vm.$el`  获取元素
     - `console.log(vm.$el)`
 
-    ![vm.$el](https://github.com/Yukijethro/Markdown_note/blob/master/Screenshots/vm.$el.png)
+    ![vm.$el](./Screenshots/vm.$el.png)
 - `vm.$data`  获取数据对象data
     - `console.log(vm.$data)`
 
-    ![vm.$data](https://github.com/Yukijethro/Markdown_note/blob/master/Screenshots/vm.$data.png)
+    ![vm.$data](./Screenshots/vm.$data.png)
     - `console.log(vm.$data.wbs)`
 
-    ![vm.$data.wbs](https://github.com/Yukijethro/Markdown_note/blob/master/Screenshots/vm.$data.wbs.png)
+    ![vm.$data.wbs](./Screenshots/vm.$data.wbs.png)
 - `vm.$options`  获取自定义属性
     - `console.log(vm.$options)`
 
-    ![vm.$options](https://github.com/Yukijethro/Markdown_note/blob/master/Screenshots/vm.$options.png)
+    ![vm.$options](./Screenshots/vm.$options.png)
 
 - `vm.$mount()`手动挂载vue程序
 - `vm.$destroy()`销毁实例
@@ -366,4 +366,3 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
 
  ## 十三. 过渡（动画）
  ![过渡（动画）](./Screenshots/transition.png)
- 
