@@ -73,11 +73,11 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
   5. 插件使用注意
     - vue-devtools默认情况下只能识别vue工程，对引用的vue.js文件无法起作用，因此，在此类项目中，需加入`Vue.config.devtools = true;`
 
-  ## 三. Vue指令
+ ## 三. Vue指令
 
-  ### Vue常用指令
+ ### Vue常用指令
 
-  #### 1. `v-model`
+ #### 1. `v-model`
   - 双向数据绑定，一般用于表单元素
   ```html
   <div id="app">
@@ -94,28 +94,30 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
   </script>
   ```
 
-  #### 2. `v-for`
+ #### 2. `v-for`
   - 对数组或对象进行循环操作
   - 提供多个参数
     `v-for="(value,key,index) in object"`
-  #### 3. `v-on`
+
+ #### 3. `v-on`
   - 用户绑定事件
-  #### 4. `v-show`
+
+ #### 4. `v-show`
   - 显示隐藏元素
   - 没有`v-hide`指令
 
-  ## 四.事件和属性
+ ## 四.事件和属性
 
-  ### 1.事件
+ ### 1.事件
 
-  #### 1.1 事件简写
+ #### 1.1 事件简写
 
   `v-on:click="event"`可以简写成`@click="event" //推荐写法`
 
-  #### 1.2 事件对象
+ #### 1.2 事件对象
   - 包含事件相关信息，如事件源、事件类型等
 
-  #### 1.3 事件冒泡
+ #### 1.3 事件冒泡
   - 概念：当一个元素上的事件被触发时，事件会从事件源开始，往上冒泡，知道事件的根元素，这一过程称为事件的冒泡。
   - 阻止冒泡：
     - a) 原生JS方式：依赖事件对象
@@ -128,7 +130,7 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
 
         `@click.stop ="" `(推荐)
 
-  #### 1.4 默认行为
+ #### 1.4 默认行为
 
   - 概念：触发某些事件时会默认执行的行为，如：点击链接是默认会跳转，右击时默认会引出菜单
   - 阻止默认行为
@@ -140,21 +142,21 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
 
         `@click.prevent=""`(推荐)
 
-  #### 1.5 键盘事件
+ #### 1.5 键盘事件
   - `@keydown` `@keypress` `@keyup`
 
   - `@keydown.enter=""` `@keydown.left=""` `@keydown.up=""` `@keydown.right=""`
 
   - 默认没有`@keydown.ctrl`事件，可以自定义键盘事件`Vue.directive('on').keyCodes.ctrl=17`
 
-  ### 2. 属性
+ ### 2. 属性
 
-  #### 2.1 属性绑定和属性缩写
+ #### 2.1 属性绑定和属性缩写
   - `v-bind`主要用于属性绑定，如`v-bind:属性名=""`
   - 属性的简写：
     `v-bind:src=""`简写`:src=""`(推荐)
 
-  #### 2.2 class和style属性
+ #### 2.2 class和style属性
   - `v-bind:class=""`简写`:class=""`
   - `v-bind:style=""`简写`:style=""`
 
@@ -179,10 +181,10 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
 
     `{{ data | filter1 参数1 参数2 | filter2 参数1 参数2 }}`
 
-  ### 2. 自定义过滤器
+ ### 2. 自定义过滤器
   - 使用全局方法`Vue.filter()`注册一个自定义过滤器，接受两个参数：过滤器ID和过滤器函数
 
-  #### 2.1 语法
+ #### 2.1 语法
 
   ```html
       <div id="app">
@@ -274,12 +276,12 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
  - 计算属性是基于它的依赖进行更新的，只有相关依赖发生改变时才会更新变化
  - 计算属性是有缓存的，只要相关依赖没有改变，多次访问计算属性时返回的值始终是相同的
 
-### 3.get和set
+ ### 3.get和set
 计算属性有两部分组成：get和set,分别用来获取计算属性和设置计算属性
 
 **注：**默认计算属性只有get,如果需要对计算属性进行赋值,可自己添加,通过set方法
 
-## 十.vue实例的属性与方法
+ ## 十.vue实例的属性与方法
 
 ```html
 <div id="app">
@@ -322,3 +324,42 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
     - `console.log(vm.$options)`
 
     ![vm.$options](https://github.com/Yukijethro/Markdown_note/blob/master/Screenshots/vm.$options.png)
+
+- `vm.$mount()`手动挂载vue程序
+- `vm.$destroy()`销毁实例
+
+ ## 十一.自定义指令
+ 使用全局方法Vue.directive()注册一个自定义指令，接收两个参数：指令ID，定义对象
+
+ ### 1.基本语法
+ ```javascript
+ Vue.directive(指令名称,{
+     bind{
+         alert('指令第一次绑定到元素时调用,只调用一次')
+     },
+     inserted{
+         alert('被绑定元素插入父节点时调用')
+     }
+     update{
+         alert('被绑定元素所在的模板更新时调用')
+     },
+     unbind{
+         alert('只调用一次,指令与元素解绑时调用')
+     }
+ })
+ ```
+
+
+ **注:**使用指令时，需要给指令添加前缀`v-`
+
+
+ ## 十二.数据的监听
+    vue实例提供了`$watch()`,用于监听vue实例中数据的变化
+
+ ### 语法
+    ```javascript
+    vm.$watch(监听数据,function (newValue,oldValue) {
+        //操作
+    },{deep:true})
+    ```
+**注：**通常更好的办法是使用计算属性，而不是使用一个命令式的$watch回调
