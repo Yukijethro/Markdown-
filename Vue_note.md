@@ -353,13 +353,17 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
  **注:**使用指令时，需要给指令添加前缀`v-`
 
 
- ## 十二.数据的监听
+ ## 十二. 数据的监听
     vue实例提供了`$watch()`,用于监听vue实例中数据的变化
 
  ### 语法
-    ```javascript
+```javascript
     vm.$watch(监听数据,function (newValue,oldValue) {
         //操作
     },{deep:true})
-    ```
+```
 **注：**通常更好的办法是使用计算属性，而不是使用一个命令式的$watch回调
+
+ ## 十三. 过渡（动画）
+ ![过渡（动画）](./Screenshots/transition.png)
+ 
