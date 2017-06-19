@@ -366,3 +366,14 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
 
  ## 十三. 过渡（动画）
  ![过渡（动画）](./Screenshots/transition.png)
+
+ #### 有 6 个(CSS)类名在 enter/leave 的过渡中切换
+
+
+ - `v-enter`:定义进入过渡的开始状态
+
+ - `v-enter-active`:定义进入过渡的过程
+
+ - `v-leave`:定义离开过渡的开始状态
+
+ - `v-leave-active`:定义离开过渡的过程
