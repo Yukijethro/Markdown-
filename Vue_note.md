@@ -37,16 +37,16 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
 ```
 
 - js部分
-    ```js
-    <script>
-        new Vue({
-            el:"#app",
-            data:{
-                msg:"Hello World!"
-            }
-        })
-    </script>
-    ```
+```javascript
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            msg:"Hello World!"
+        }
+    })
+</script>
+```
 
  #### 2.2 调用vue-devtools插件，在chrome中调试vue
 
@@ -192,7 +192,7 @@ Vue.js也称为vue，读音/vju:/，类似 view，错误读音v-u-e
           <h3>{{ num | number(3,1) }}</h3>
       </div>
   ```
-  ```js
+  ```javascript
       filters:{
           addZero:function(data){
               return data<10?'0'+data:data;
